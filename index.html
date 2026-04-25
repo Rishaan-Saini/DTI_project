@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Second-Hand Market</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h2>LocalMarket</h2>
+        <nav>
+            <button onclick="showSection('available')" class="active" id="btn-available">Available</button>
+            <button onclick="showSection('add')" id="btn-add">Add Item</button>
+            <button onclick="showSection('sold')" id="btn-sold">Sold Items</button>
+            <button onclick="showSection('makers')" id="btn-makers">Info of Makers</button>
+            <button onclick="clearMaster()" class="danger">Master Clear</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="available" class="section active">
+            <h2>Items for Sale</h2>
+            <div class="grid" id="available-grid">
+                </div>
+        </section>
+
+        <section id="add" class="section">
+            <h2>Add a New Item</h2>
+            <form id="addItemForm" onsubmit="handleAddItem(event)">
+                <div class="form-group">
+                    <label for="itemName">Item Name</label>
+                    <input type="text" id="itemName" required>
+                </div>
+                <div class="form-group">
+                    <label for="itemPrice">Price (₹)</label>
+                    <input type="number" id="itemPrice" min="0" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="itemDesc">Description</label>
+                    <textarea id="itemDesc" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="itemImage">Photo (Max 1MB)</label>
+                    <input type="file" id="itemImage" accept="image/*" required>
+                    <small style="color: #666; display: block; margin-top: 5px;">Images over 1MB will be rejected to save local storage.</small>
+                </div>
+                <button type="submit" class="btn-submit">List Item</button>
+            </form>
+        </section>
+
+        <section id="sold" class="section">
+            <h2>Items Already Sold</h2>
+            <ul class="sold-list" id="sold-list">
+                </ul>
+        </section>
+
+        <section id="makers" class="section">
+            <h2>Info of Makers</h2>
+            <div class="makers-info">
+                <h3>About LocalMarket</h3>
+                <p>This platform was developed as a lightweight, serverless solution for localized trading. All data is securely stored directly within your web browser's local storage.</p>
+                <p><strong>Creators:</strong> Rishaan Saini, Jeet Shah, Pruthviraj Solase</p>
+                <p><strong>Version:</strong> 1.0.0</p>
+                <p><strong>Design Philosophy:</strong> Keep it simple, keep it local.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
