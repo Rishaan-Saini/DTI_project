@@ -6,6 +6,11 @@ window.onload = function() {
     loadFromStorage();
     renderAvailable();
     renderSold();
+
+    if (localStorage.getItem('marketTheme') === 'dark') {
+        document.body.classList.add('dark-mode');
+        document.getElementById('btn-theme').innerText = '☀️ Light Mode';
+    }
 };
 
 // Navigation Logic
@@ -21,6 +26,24 @@ function showSection(sectionId) {
     // Highlight active button (ignore master clear)
     const targetBtn = document.getElementById(`btn-${sectionId}`);
     if(targetBtn) targetBtn.classList.add('active');
+}
+
+// Toggle Dark Mode
+function toggleTheme() {
+    const body = document.body;
+    const themeBtn = document.getElementById('btn-theme');
+    
+    // This adds the class if it's missing, or removes it if it's there
+    body.classList.toggle('dark-mode');
+    
+    // Check if the class is currently active to save the preference
+    if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('marketTheme', 'dark');
+        themeBtn.innerText = '☀️ Light Mode';
+    } else {
+        localStorage.setItem('marketTheme', 'light');
+        themeBtn.innerText = '🌙 Dark Mode';
+    }
 }
 
 // Add New Item Logic

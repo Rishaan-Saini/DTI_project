@@ -174,3 +174,39 @@ button.btn-submit {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
+
+/* --- Dark Mode Styles --- */
+body.dark-mode {
+    /* Overriding our root variables */
+    --primary: #1a252f;
+    --secondary: #2ecc71;
+    --light: #1e272e;
+    --dark: #ecf0f1;
+    
+    background-color: #121212;
+    color: var(--dark);
+}
+
+body.dark-mode .card,
+body.dark-mode .makers-info,
+body.dark-mode .sold-list li {
+    background: #1e1e1e;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+    color: #ecf0f1;
+}
+
+body.dark-mode input[type="text"], 
+body.dark-mode input[type="number"], 
+body.dark-mode textarea {
+    background-color: #2c3e50;
+    color: white;
+    border-color: #444;
+}
+
+body.dark-mode .card-action {
+    background: #1e272e;
+}
+
+body.dark-mode small {
+    color: #aaa !important; /* Makes the 1MB warning visible in dark mode */
+}
