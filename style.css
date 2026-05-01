@@ -253,7 +253,7 @@ body.dark-mode {
 
 body.dark-mode .card,
 body.dark-mode .makers-info,
-body.dark-mode .sold-list li 
+body.dark-mode .sold-list li, 
 body.dark-mode .home-hero,
 body.dark-mode .feature-card {
     background: #1e1e1e;
@@ -280,4 +280,9 @@ body.dark-mode small {
 /* Add this to fix the hero subtitle color in dark mode */
 body.dark-mode .home-hero p {
     color: #bbb;
+}
+
+/* --- Home Page Dark Mode Fixes --- */
+body.dark-mode .home-hero h1 {
+    color: var(--secondary); /* Swaps the dark text to bright green */
 }
