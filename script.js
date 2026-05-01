@@ -130,7 +130,7 @@ function renderAvailable() {
             <img src="${item.image}" alt="${item.name}">
             <div class="card-content">
                 <h3>${item.name}</h3>
-                <p class="card-price">$${item.price}</p>
+                <p class="card-price">₹${item.price}</p>
                 <p>${item.description}</p>
             </div>
             <div class="card-action">
@@ -159,7 +159,7 @@ function renderSold() {
         li.innerHTML = `
             <div>
                 <span class="sold-name">${item.name}</span>
-                <span class="sold-price" style="margin-left: 10px;">Sold for $${item.price}</span>
+                <span class="sold-price" style="margin-left: 10px;">Sold for ₹${item.price}</span>
             </div>
             <button onclick="deleteItem('${item.id}')" class="btn-delete-small">Delete</button>
         `;
