@@ -130,11 +130,12 @@ function renderAvailable() {
             <img src="${item.image}" alt="${item.name}">
             <div class="card-content">
                 <h3>${item.name}</h3>
-                <p class="card-price">₹${item.price}</p>
+                <p class="card-price">$${item.price}</p>
                 <p>${item.description}</p>
             </div>
             <div class="card-action">
-                <button onclick="markAsSold('${item.id}')">Mark as Sold</button>
+                <button onclick="markAsSold('${item.id}')">Mark Sold</button>
+                <button onclick="deleteItem('${item.id}')" class="btn-delete">Delete</button>
             </div>
         `;
         grid.appendChild(card);
@@ -156,11 +157,33 @@ function renderSold() {
     soldItems.forEach(item => {
         const li = document.createElement('li');
         li.innerHTML = `
-            <span class="sold-name">${item.name}</span>
-            <span class="sold-price">Sold for ₹${item.price}</span>
+            <div>
+                <span class="sold-name">${item.name}</span>
+                <span class="sold-price" style="margin-left: 10px;">Sold for $${item.price}</span>
+            </div>
+            <button onclick="deleteItem('${item.id}')" class="btn-delete-small">Delete</button>
         `;
         list.appendChild(li);
     });
+}
+
+// Permanently Delete an Item
+function deleteItem(id) {
+    if(confirm("Are you sure you want to permanently delete this item? This will free up storage space.")) {
+        // Filter out the item with the matching ID
+        marketItems = marketItems.filter(item => item.id !== id);
+        
+        // Save the new, smaller list to storage
+        saveToStorage();
+        
+        // Re-render the screens to show the item is gone
+        // Note: If you haven't implemented the search bar yet, just use renderAvailable();
+        const searchInput = document.getElementById('searchInput');
+        const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
+        
+        renderAvailable(searchTerm);
+        renderSold();
+    }
 }
 
 // Local Storage Helpers

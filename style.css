@@ -132,10 +132,12 @@ button.btn-submit {
     margin: 0.5rem 0;
 }
 
+/* Updated Card Action for multiple buttons */
 .card-action {
     padding: 1rem;
     background: var(--light);
-    text-align: center;
+    display: flex;
+    gap: 0.5rem;
 }
 
 .card-action button {
@@ -145,7 +147,16 @@ button.btn-submit {
     padding: 0.5rem 1rem;
     cursor: pointer;
     border-radius: 4px;
-    width: 100%;
+    flex: 1; /* Makes buttons share the space equally */
+    transition: background 0.3s ease;
+}
+
+.card-action button.btn-delete {
+    background: var(--danger);
+}
+
+.card-action button:hover {
+    opacity: 0.9;
 }
 
 /* Sold List */
@@ -154,6 +165,7 @@ button.btn-submit {
     padding: 0;
 }
 
+/* Updated Sold List to fit a delete button */
 .sold-list li {
     background: white;
     padding: 1rem;
@@ -162,6 +174,16 @@ button.btn-submit {
     border-radius: 4px;
     display: flex;
     justify-content: space-between;
+    align-items: center; /* Keeps text and button vertically aligned */
+}
+
+.btn-delete-small {
+    background: var(--danger);
+    color: white;
+    border: none;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 .sold-name { font-weight: bold; }
