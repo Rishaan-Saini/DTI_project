@@ -294,3 +294,62 @@ body.dark-mode .home-hero p {
 body.dark-mode .home-hero h1 {
     color: var(--secondary); /* Swaps the dark text to bright green */
 }
+/* ===== LIST ITEM FORM LAYOUT FIX ===== */
+
+#add form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    max-width: 700px;
+    margin: auto;
+}
+
+#add .full {
+    grid-column: span 2;
+}
+
+/* Slightly better input look (simple, not advanced) */
+#add input,
+#add select,
+#add textarea {
+    padding: 12px;
+    border-radius: 8px;
+}
+
+/* Make textarea bigger */
+#add textarea {
+    height: 100px;
+}
+
+/* Fix button size */
+#add .btn-submit {
+    width: auto;        /* removes full width */
+    padding: 10px 20px;
+    font-size: 14px;
+    justify-self: end; /* Aligns the button to the right */
+}
+
+/* Make select same size as inputs */
+#add select {
+    width: 100%;
+    height: 48px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+/* Fix file input size */
+#add input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: white;
+}
+
+#add .button-group {
+    display: flex;
+    align-items: end;
+    justify-content: flex-end;
+}
