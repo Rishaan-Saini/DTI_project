@@ -197,6 +197,48 @@ button.btn-submit {
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
+/* --- Home Page Styles --- */
+.home-hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 3rem;
+}
+
+.home-hero h1 {
+    color: var(--primary);
+    font-size: 2.5rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.home-hero p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.feature-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.feature-card h3 {
+    color: var(--secondary);
+    margin-top: 0;
+}
+
 /* --- Dark Mode Styles --- */
 body.dark-mode {
     /* Overriding our root variables */
@@ -211,7 +253,9 @@ body.dark-mode {
 
 body.dark-mode .card,
 body.dark-mode .makers-info,
-body.dark-mode .sold-list li {
+body.dark-mode .sold-list li 
+body.dark-mode .home-hero,
+body.dark-mode .feature-card {
     background: #1e1e1e;
     box-shadow: 0 4px 6px rgba(0,0,0,0.5);
     color: #ecf0f1;
@@ -231,4 +275,9 @@ body.dark-mode .card-action {
 
 body.dark-mode small {
     color: #aaa !important; /* Makes the 1MB warning visible in dark mode */
+}
+
+/* Add this to fix the hero subtitle color in dark mode */
+body.dark-mode .home-hero p {
+    color: #bbb;
 }
