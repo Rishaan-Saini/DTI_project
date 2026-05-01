@@ -181,6 +181,10 @@ button.btn-submit {
     align-items: center; /* Keeps text and button vertically aligned */
 }
 
+.sold-list:hover{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
 .btn-delete-small {
     background: var(--danger);
     color: white;
