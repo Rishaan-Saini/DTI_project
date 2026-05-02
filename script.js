@@ -66,13 +66,20 @@ async function handleAddItem(e) {
         const base64Image = await convertBase64(file);
         
         const newItem = {
-            id: Date.now().toString(), // unique ID based on timestamp
-            name: name,
-            price: price,
-            description: desc,
-            image: base64Image,
-            status: 'available' // 'available' or 'sold'
-        };
+    id: Date.now().toString(),
+    name: document.getElementById('itemName').value,
+    price: document.getElementById('itemPrice').value,
+    description: document.getElementById('itemDesc').value,
+    image: base64Image,
+
+    category: document.getElementById('category').value,
+    condition: document.getElementById('condition').value,
+    location: document.getElementById('location').value,
+    owner: document.getElementById('sellerName').value,
+    contact: document.getElementById('contact').value,
+
+    status: 'available'
+};
 
         marketItems.push(newItem);
         saveToStorage();
@@ -127,17 +134,27 @@ function renderAvailable() {
         const card = document.createElement('div');
         card.className = 'card';
         card.innerHTML = `
-            <img src="${item.image}" alt="${item.name}">
-            <div class="card-content">
-                <h3>${item.name}</h3>
-                <p class="card-price">₹${item.price}</p>
-                <p>${item.description}</p>
-            </div>
-            <div class="card-action">
-                <button onclick="markAsSold('${item.id}')">Mark Sold</button>
-                <button onclick="deleteItem('${item.id}')" class="btn-delete">Delete</button>
-            </div>
-        `;
+    <img src="${item.image}" alt="${item.name}">
+    <div class="card-content">
+        <h3>${item.name}</h3>
+        <p class="card-price">₹${item.price}</p>
+    </div>
+
+    <div class="card-action">
+        <button onclick="toggleDetails('${item.id}')">Details</button>
+        <button onclick="buyItem('${item.id}')" class="btn-buy">Buy Now</button>
+        <button onclick="deleteItem('${item.id}')" class="btn-delete">Delete</button>
+    </div>
+
+    <div id="details-${item.id}" class="item-details" style="display:none;">
+    <p><b>Description:</b> ${item.description}</p>
+    <p><b>Category:</b> ${item.category}</p>
+    <p><b>Condition:</b> ${item.condition}</p>
+    <p><b>Owner:</b> ${item.owner}</p>
+    <p><b>Location:</b> ${item.location}</p>
+    <p><b>Contact:</b> ${item.contact}</p>
+</div>
+`;
         grid.appendChild(card);
     });
 }
@@ -210,5 +227,32 @@ function clearMaster() {
         renderAvailable();
         renderSold();
         alert("All data cleared successfully.");
+    }
+}
+
+
+function buyItem(id) {
+    const itemIndex = marketItems.findIndex(item => item.id === id);
+
+    if (itemIndex !== -1) {
+        if(confirm("Do you want to buy this item?")) {
+            marketItems[itemIndex].status = 'sold';
+
+            saveToStorage();
+            renderAvailable();
+            renderSold();
+
+            alert("Item purchased successfully!");
+        }
+    }
+}
+
+function toggleDetails(id) {
+    const div = document.getElementById(`details-${id}`);
+
+    if (div.style.display === "none") {
+        div.style.display = "block";
+    } else {
+        div.style.display = "none";
     }
 }
