@@ -13,7 +13,6 @@
         <nav>
             <button onclick="toggleTheme()" id="btn-theme" style="margin-right: 15px; border-style: dashed;">🌙 Dark Mode</button>
             
-            <!-- DIFFERENT TABS ON MAIN PAGE -->
             <button onclick="showSection('home')" class="active" id="btn-home">Home</button>
             <button onclick="showSection('available')" id="btn-available">Shop</button>
             <button onclick="showSection('add')" id="btn-add">Sell Item</button>
@@ -26,205 +25,176 @@
 
     <main>
 
-        <!-- HOME PAGE -->
+        <!-- ✅ NEW DASHBOARD HOME PAGE -->
         <section id="home" class="section active">
-            <div class="home-hero">
-                <h1>Buy & Sell Second-Hand Items Easily</h1>
-            <p>A simple marketplace for students to sell things they no longer need.</p>
-                <div class="hero-buttons">
-                   <button onclick="showSection('available')" class="btn-submit">Browse Items</button>
-<button onclick="showSection('add')" class="btn-submit" style="background: var(--primary);">Sell Something</button>
+
+            <h1 class="dashboard-title">Dashboard</h1>
+
+            <div class="dashboard-grid">
+
+                <!-- MAIN CARD -->
+                <div class="card wide">
+                    <h3>Welcome to LocalMarket</h3>
+                    <p>Buy and sell second-hand items easily.</p>
+
+                    <div class="quick-actions">
+                        <button onclick="showSection('available')">Browse Items</button>
+                        <button onclick="showSection('add')">Sell Item</button>
+                    </div>
                 </div>
+
+                <!-- AVAILABLE -->
+                <div class="card">
+                    <h3>Available Items</h3>
+                    <h2 id="count-available">0</h2>
+                    <p>Items listed</p>
+                </div>
+
+                <!-- SOLD -->
+                <div class="card">
+                    <h3>Sold Items</h3>
+                    <h2 id="count-sold">0</h2>
+                    <p>Items sold</p>
+                </div>
+
+                <!-- INFO -->
+                <div class="card wide">
+                    <h3>Info</h3>
+                    <div class="alert-box">
+                        Start by browsing items or listing something to sell.
+                    </div>
+                </div>
+
             </div>
 
-            <h2>What you can do here</h2>
-            <div class="grid">
-                <div class="feature-card">
-                    <h3>🔍 Easy Search</h3>
-<p>Quickly find items by name or category.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>🔒 Private</h3>
-<p>Your data stays on your device. No sign-up needed.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>🌙 Dark Mode</h3>
-<p>Switch between light and dark themes anytime.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>🧹 Manage Listings</h3>
-<p>Remove items once they are sold or no longer needed.</p>
-                </div>
-            </div>
         </section>
 
+        <!-- AVAILABLE -->
         <section id="available" class="section">
             <h2>Available Items</h2>
-            <div class="grid" id="available-grid">
-                </div>
+            <div class="grid" id="available-grid"></div>
         </section>
-<section id="add" class="section">
-    <h2 class="form-title">List an Item</h2>
 
-    <form id="addItemForm" onsubmit="handleAddItem(event)" class="form-grid">
+        <!-- ADD ITEM -->
+        <section id="add" class="section">
+            <h2 class="form-title">List an Item</h2>
 
-        <div class="form-group full">
-            <label>ITEM TITLE *</label>
-            <input type="text" id="itemName" placeholder="e.g. Study Desk" required>
-        </div>
+            <form id="addItemForm" onsubmit="handleAddItem(event)" class="form-grid">
 
-        <div class="form-group">
-            <label>PRICE (₹) *</label>
-            <input type="number" id="itemPrice" placeholder="0" required>
-        </div>
+                <div class="form-group full">
+                    <label>ITEM TITLE *</label>
+                    <input type="text" id="itemName" required>
+                </div>
 
-        <div class="form-group">
-            <label>CATEGORY *</label>
-            <select id="category" required>
-                <option value="" disabled selected>Select...</option>
-                <option>Electronics</option>
-                <option>Furniture</option>
-                <option>Clothing</option>
-                <option>Stationary</option>
-                <option>Other</option>
-            </select>
-        </div>
+                <div class="form-group">
+                    <label>PRICE (₹) *</label>
+                    <input type="number" id="itemPrice" required>
+                </div>
 
-        <div class="form-group">
-            <label>CONDITION *</label>
-            <select id="condition" required>
-                <option value="" disabled selected>Select...</option>
-                <option>New</option>
-                <option>Good</option>
-                <option>Used</option>
-            </select>
-        </div>
+                <div class="form-group">
+                    <label>CATEGORY *</label>
+                    <select id="category" required>
+                        <option value="" disabled selected>Select...</option>
+                        <option>Electronics</option>
+                        <option>Furniture</option>
+                        <option>Clothing</option>
+                        <option>Stationary</option>
+                        <option>Other</option>
+                    </select>
+                </div>
 
-        <div class="form-group">
-            <label>LOCATION *</label>
-            <input type="text" id="location" placeholder="e.g. Dadar, Mumbai" required>
-        </div>
+                <div class="form-group">
+                    <label>CONDITION *</label>
+                    <select id="condition" required>
+                        <option value="" disabled selected>Select...</option>
+                        <option>New</option>
+                        <option>Good</option>
+                        <option>Used</option>
+                    </select>
+                </div>
 
-        <div class="form-group full">
-            <label>DESCRIPTION *</label>
-            <textarea id="itemDesc" placeholder="Describe your item, any defects..." required></textarea>
-        </div>
+                <div class="form-group">
+                    <label>LOCATION *</label>
+                    <input type="text" id="location" required>
+                </div>
 
-        <div class="form-group full">
-            <label>YOUR NAME *</label>
-            <input type="text" id="sellerName" placeholder="Your Name" required>
-        </div>
+                <div class="form-group full">
+                    <label>DESCRIPTION *</label>
+                    <textarea id="itemDesc" required></textarea>
+                </div>
 
-        <div class="form-group full">
-            <label>WHATSAPP / CONTACT *</label>
-            <input type="tel" id="contact" placeholder="+91 98765 43210" required>
-        </div>
+                <div class="form-group full">
+                    <label>YOUR NAME *</label>
+                    <input type="text" id="sellerName" required>
+                </div>
 
-        <div class="form-group">
-            <label for="itemImage">Photo (Max 1MB)</label>
-            <input type="file" id="itemImage" accept="image/*" required>
-            <small style="color: #666; display: block; margin-top: 5px;">
-            </small>
-        </div>
-        <div class="form-group button-group">
-        <button type="submit" class="btn-submit">List Item</button>
-        </div>
-    </form>
-</section>
+                <div class="form-group full">
+                    <label>WHATSAPP / CONTACT *</label>
+                    <input type="tel" id="contact" required>
+                </div>
 
+                <div class="form-group">
+                    <label>Photo</label>
+                    <input type="file" id="itemImage" accept="image/*" required>
+                </div>
+
+                <div class="form-group button-group">
+                    <button type="submit" class="btn-submit">List Item</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- SOLD -->
         <section id="sold" class="section">
             <h2>Items Already Sold</h2>
-            <ul class="sold-list" id="sold-list">
-                </ul>
+            <ul class="sold-list" id="sold-list"></ul>
         </section>
 
+        <!-- FAQ -->
         <section id="faq" class="section">
-    <h1 class="faq-title">Frequently Asked Questions</h1>
-    <div class="faq-container">
-
-        <div class="faq-item">
-            <button class="faq-question">What is this marketplace about? <span>▼</span></button>
-            <div class="faq-answer">
-                <p>This platform allows users to buy and sell second-hand items easily within a simple interface.</p>
+            <h1 class="faq-title">Frequently Asked Questions</h1>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">What is this marketplace? <span>▼</span></button>
+                    <div class="faq-answer"><p>Buy and sell second-hand items easily.</p></div>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <div class="faq-item">
-            <button class="faq-question">How can I list an item? <span>▼</span></button>
-            <div class="faq-answer">
-                <p>You can go to the "Add Item" section, fill in the details, and submit the form to list your item.</p>
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <button class="faq-question">Can I edit or delete my item? <span>▼</span></button>
-            <div class="faq-answer">
-                <p>Currently, items can be cleared using the reset option. Future updates may include edit/delete features.</p>
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <button class="faq-question">Is there a login system? <span>▼</span></button>
-            <div class="faq-answer">
-                <p>No, this is a basic project and does not require login. All data is stored locally.</p>
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <button class="faq-question">Where are the items stored? <span>▼</span></button>
-            <div class="faq-answer">
-                <p>The items are stored using local storage in your browser, so they remain saved on your device.</p>
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <button class="faq-question">Can I access this on mobile? <span>▼</span></button>
-            <div class="faq-answer">
-                <p>Yes, the website is designed to work on both desktop and mobile devices.</p>
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <button class="faq-question">Is this project connected to real payments? <span>▼</span></button>
-            <div class="faq-answer">
-                <p>No, this is only a demo project and does not include real payment integration.</p>
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <button class="faq-question">What future features can be added? <span>▼</span></button>
-            <div class="faq-answer">
-                <p>Future updates may include login system, chat feature, better filters, and item management options.</p>
-            </div>
-        </div>
-
-    </div>
-</section>
-                
-
+        <!-- ABOUT -->
         <section id="makers" class="section">
             <div class="makers-info">
-                <h3>About This Project</h3>
+                <h2>About This Project</h2>
                  <p>
                     This project is a simple second-hand marketplace designed especially for students to buy and sell used items easily. 
                     Many useful items often go unused, and this platform helps give them a second life.
-                </p>
-
-                <p>
                     The idea behind this project is to create a space where people can list items they no longer need and others can find them at affordable prices. 
                     It also promotes reuse and reduces unnecessary waste.
                 </p>
 
                 <p>
                     Users can browse available items, add their own listings, and connect with others in a simple and user-friendly way.
-                </p>
-
-                <p>
                     This project was developed as part of a learning experience to understand web development and build a practical solution for everyday problems.
                 </p>
-                <p class="team"><strong>The Team:</strong> Rishaan Saini, Jeet Shah, Pruthviraj Solase</p>
+
+                
+            <h2>Upcoming Updates</h2>
+               <ul class="updates-list">
+                    <li>Add search and filter options for easier browsing</li>
+                    <li>Introduce user login and profile system</li>
+                    <li>Enable chat between buyers and sellers</li>
+                    <li>Improve mobile responsiveness</li>
+                    <li>Add option to save or bookmark items</li>
+                    <li>Allow editing and deleting of listed items</li>
+              </ul>
+                
+                <div class="team-box">
+                <h2>👨‍💻 Our Team</h2>
+                <p>Rishaan Saini • Jeet Shah • Pruthviraj Solase</p>
+                </div>
                 </div>
         </section>
+
     </main>
 
     <script src="script.js"></script>

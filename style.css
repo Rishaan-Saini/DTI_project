@@ -128,5 +128,76 @@ button.btn-submit {
 
 .faq-answer {
     display: none;
-    padding: 5px;
+    padding: 15px 18px;
+    background: #fafafa;
+    border-top: 1px solid #ddd;
+}
+
+.faq-answer p {
+    margin: 0;
+    font-size: 15px;
+    color: #444;
+}
+
+/* Improve paragraph readability */
+#about p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #4a5a6a;
+    margin-bottom: 16px;
+}
+
+/* Add subtle spacing between paragraphs */
+#about p:not(:last-child) {
+    border-left: 3px solid #ff7a3d;
+    padding-left: 12px;
+}
+
+#about h2 {
+   font-family: Georgia, 'Times New Roman', serif;
+}
+
+#updates {
+    background: #f5f7fa;
+    padding: 25px;
+    border-radius: 12px;
+    margin: 20px auto;
+    max-width: 900px;
+    border-left: 5px solid #ff7a3d;
+}
+
+#updates h2 {
+    margin-bottom: 15px;
+    font-family: Georgia, 'Times New Roman', serif;
+}
+
+.updates-list {
+    padding-left: 20px;
+}
+
+.updates-list li {
+    list-style-type: disc;   /* default dot */
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #444;
+    line-height: 1.6;
+}
+
+#about .team {
+    margin-top: 15px;
+    font-size: 16px;
+    color: #2c3e50;
+}
+
+/* Style only the "The Team:" part */
+#about .team strong {
+    color: #ff7a3d;
+    font-weight: 600;
+    font-family: Georgia, 'Times New Roman', serif;
+}
+
+/* Names styling */
+#about .team span {
+    color: #555;
+    font-weight: 500;
 }
