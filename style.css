@@ -208,15 +208,18 @@ button.btn-submit {
 /* --- Home Page Styles --- */
 .home-hero {
     text-align: center;
-    padding: 4rem 2rem;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 5rem 2rem;
+    border-radius: 12px;
     margin-bottom: 3rem;
+
+    background: linear-gradient(135deg, #2c3e50, #4ca1af);
+    color: white;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
 .home-hero h1 {
-    color: var(--primary);
+     color: white;
     font-size: 2.5rem;
     margin-top: 0;
     margin-bottom: 1rem;
@@ -224,7 +227,7 @@ button.btn-submit {
 
 .home-hero p {
     font-size: 1.2rem;
-    color: #666;
+    color: #e0e0e0;
     margin-bottom: 2rem;
 }
 
