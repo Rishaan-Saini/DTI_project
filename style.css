@@ -457,6 +457,10 @@ body.dark-mode .home-hero h1 {
     padding-left: 12px;
 }
 
+#about h2 {
+   font-family: Georgia, 'Times New Roman', serif;
+}
+
 #updates {
     background: #f5f7fa;
     padding: 25px;
@@ -468,6 +472,7 @@ body.dark-mode .home-hero h1 {
 
 #updates h2 {
     margin-bottom: 15px;
+    font-family: Georgia, 'Times New Roman', serif;
 }
 
 .updates-list {
@@ -495,6 +500,7 @@ body.dark-mode .home-hero h1 {
 #about .team strong {
     color: #ff7a3d;
     font-weight: 600;
+    font-family: Georgia, 'Times New Roman', serif;
 }
 
 /* Names styling */
