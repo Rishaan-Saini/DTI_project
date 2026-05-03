@@ -103,6 +103,7 @@ button.btn-submit {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1.5rem;
+    align-items: strech;
 }
 
 .card {
@@ -244,7 +245,7 @@ button.btn-submit {
 }
 
 .feature-card {
-    background: linear-gradient(145deg, #ffffff, #f7f7f7);
+    background: linear-gradient(135deg, #ffffff, #f7f7f7);
     padding: 1.6rem;
     border-radius: 14px;
     box-shadow: 0 6px 18px rgba(0,0,0,0.06);
@@ -257,9 +258,7 @@ button.btn-submit {
     transform: scale(1.03);
 }
 
-.feature-card:nth-child(3) {
-    margin-top: 8px;
-}
+
 
 .feature-card:nth-child(4) {
     transform: rotate(-0.4deg);
@@ -277,18 +276,23 @@ body.dark-mode {
     --light: #1e272e;
     --dark: #ecf0f1;
     
-    background-color: #121212;
+    background-color: #0f172a;
     color: var(--dark);
 }
 
 body.dark-mode .card,
 body.dark-mode .makers-info,
 body.dark-mode .sold-list li, 
-body.dark-mode .home-hero,
 body.dark-mode .feature-card {
-    background: #1e1e1e;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+    background: #1e293b; /* A cool navy-grey that matches the theme */
+    border: 1px solid rgba(255, 255, 255, 0.05); /* Subtle edge definition */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
     color: #ecf0f1;
+}
+
+body.dark-mode .home-hero{
+    background: linear-gradient(135deg, #0f172a, #134e5e);
+    color: #ffffff;
 }
 
 body.dark-mode input[type="text"], 
@@ -312,8 +316,8 @@ body.dark-mode .home-hero p {
 }
 
 body.dark-mode .home-hero h1 {
-    color: var(--secondary); 
-}
+    color: #ffffff; 
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Adds a little depth */}
 
 #add form {
     display: grid;
@@ -343,6 +347,10 @@ body.dark-mode .home-hero h1 {
     padding: 10px 20px;
     font-size: 14px;
     justify-self: end; 
+}
+
+.btn-submit:hover{
+    opacity: 0.9;
 }
 
 #add select {
@@ -529,4 +537,5 @@ body.dark-mode .feature-card {
 #about .team span {
     color: #555;
     font-weight: 500;
+}
 }
