@@ -7,7 +7,7 @@ window.onload = function() {
 
     if (localStorage.getItem('marketTheme') === 'dark') {
         document.body.classList.add('dark-mode');
-        document.getElementById('btn-theme').innerText = 'Light Mode';
+        document.getElementById('btn-theme').innerText = '☀️ Light Mode';
     }
 };
 
