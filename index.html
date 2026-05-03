@@ -13,10 +13,10 @@
         <nav>
             <button onclick="toggleTheme()" id="btn-theme" style="margin-right: 15px; border-style: dashed;">🌙 Dark Mode</button>
             
-            <!-- NEW: Home Button (Now the active one) -->
+            <!-- DIFFERENT TABS ON MAIN PAGE -->
             <button onclick="showSection('home')" class="active" id="btn-home">Home</button>
-            <button onclick="showSection('available')" id="btn-available">Available</button>
-            <button onclick="showSection('add')" id="btn-add">Add Item</button>
+            <button onclick="showSection('available')" id="btn-available">Shop</button>
+            <button onclick="showSection('add')" id="btn-add">Sell Item</button>
             <button onclick="showSection('sold')" id="btn-sold">Sold Items</button>
             <button onclick="showSection('makers')" id="btn-makers">Info of Makers</button>
             <button onclick="clearMaster()" class="danger">Master Clear</button>
@@ -25,7 +25,7 @@
 
     <main>
 
-        <!-- NEW: Home Page Section -->
+        <!-- HOME PAGE -->
         <section id="home" class="section active">
             <div class="home-hero">
                 <h1>Buy & Sell Second-Hand Items Easily</h1>
@@ -67,13 +67,11 @@
 
     <form id="addItemForm" onsubmit="handleAddItem(event)" class="form-grid">
 
-        <!-- Full width -->
         <div class="form-group full">
             <label>ITEM TITLE *</label>
             <input type="text" id="itemName" placeholder="e.g. Study Desk" required>
         </div>
 
-        <!-- Row -->
         <div class="form-group">
             <label>PRICE (₹) *</label>
             <input type="number" id="itemPrice" placeholder="0" required>
@@ -106,7 +104,6 @@
             <input type="text" id="location" placeholder="e.g. Dadar, Mumbai" required>
         </div>
 
-        <!-- Full width -->
         <div class="form-group full">
             <label>DESCRIPTION *</label>
             <textarea id="itemDesc" placeholder="Describe your item, any defects..." required></textarea>
