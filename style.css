@@ -281,7 +281,7 @@ body.dark-mode {
     --light: #1e272e;
     --dark: #ecf0f1;
     
-    background-color: #121212;
+    background-color: #0f172a;
     color: var(--dark);
 }
 
@@ -353,6 +353,10 @@ body.dark-mode .home-hero h1 {
     padding: 10px 20px;
     font-size: 14px;
     justify-self: end; /* Aligns the button to the right */
+}
+
+.btn-submit:hover{
+    opacity: 0.9;
 }
 
 /* Make select same size as inputs */
