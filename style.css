@@ -69,7 +69,7 @@ main {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Forms */
+/* FORMS CSS */
 .form-group {
     margin-bottom: 1rem;
 }
@@ -98,7 +98,7 @@ button.btn-submit {
     font-size: 1rem;
 }
 
-/* Grid */
+/* GRID CSS */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -134,7 +134,7 @@ button.btn-submit {
     margin: 0.5rem 0;
 }
 
-/* Updated Card Action for multiple buttons */
+/* CARDS SECTION CSS */
 .card-action {
     padding: 1rem;
     background: var(--light);
@@ -154,7 +154,7 @@ button.btn-submit {
     padding: 0.5rem 1rem;
     cursor: pointer;
     border-radius: 4px;
-    flex: 1; /* Makes buttons share the space equally */
+    flex: 1; 
     transition: background 0.3s ease;
 }
 
@@ -166,13 +166,11 @@ button.btn-submit {
     opacity: 0.9;
 }
 
-/* Sold List */
+/* SOLD SECTION CSS */
 .sold-list {
     list-style: none;
     padding: 0;
 }
-
-/* Updated Sold List to fit a delete button */
 .sold-list li {
     background: white;
     padding: 1rem;
@@ -181,7 +179,7 @@ button.btn-submit {
     border-radius: 4px;
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Keeps text and button vertically aligned */
+    align-items: center; 
 }
 
 .sold-list li:hover{
@@ -205,7 +203,7 @@ button.btn-submit {
 .sold-name { font-weight: bold; }
 .sold-price { color: #666; }
 
-/* Makers Section */
+/* MAKERS SCETION CSS */
 .makers-info {
     background: white;
     padding: 2rem;
@@ -213,7 +211,7 @@ button.btn-submit {
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-/* --- Home Page Styles --- */
+/* --- HOME PAGE CSS --- */
 .home-hero {
     text-align: center;
     padding: 5rem 2rem;
@@ -255,7 +253,6 @@ button.btn-submit {
     position: relative;
 }
 
-/* add slight randomness */
 .feature-card:nth-child(2) {
     transform: scale(1.03);
 }
@@ -273,9 +270,8 @@ button.btn-submit {
     margin-top: 0;
 }
 
-/* --- Dark Mode Styles --- */
+/* --- DARK MODE CSS--- */
 body.dark-mode {
-    /* Overriding our root variables */
     --primary: #1a252f;
     --secondary: #2ecc71;
     --light: #1e272e;
@@ -308,19 +304,16 @@ body.dark-mode .card-action {
 }
 
 body.dark-mode small {
-    color: #aaa !important; /* Makes the 1MB warning visible in dark mode */
+    color: #aaa !important; 
 }
 
-/* Add this to fix the hero subtitle color in dark mode */
 body.dark-mode .home-hero p {
     color: #bbb;
 }
 
-/* --- Home Page Dark Mode Fixes --- */
 body.dark-mode .home-hero h1 {
-    color: var(--secondary); /* Swaps the dark text to bright green */
+    color: var(--secondary); 
 }
-/* ===== LIST ITEM FORM LAYOUT FIX ===== */
 
 #add form {
     display: grid;
@@ -334,7 +327,6 @@ body.dark-mode .home-hero h1 {
     grid-column: span 2;
 }
 
-/* Slightly better input look (simple, not advanced) */
 #add input,
 #add select,
 #add textarea {
@@ -342,20 +334,17 @@ body.dark-mode .home-hero h1 {
     border-radius: 8px;
 }
 
-/* Make textarea bigger */
 #add textarea {
     height: 100px;
 }
 
-/* Fix button size */
 #add .btn-submit {
-    width: auto;        /* removes full width */
+    width: auto;        
     padding: 10px 20px;
     font-size: 14px;
-    justify-self: end; /* Aligns the button to the right */
+    justify-self: end; 
 }
 
-/* Make select same size as inputs */
 #add select {
     width: 100%;
     height: 48px;
