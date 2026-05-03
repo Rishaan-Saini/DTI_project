@@ -443,45 +443,65 @@ body.dark-mode .home-hero h1 {
     color: #444;
 }
 
-/* Container styling */
-#about {
-    background: #f5f7fa;
-    padding: 30px;
-    border-radius: 12px;
-    max-width: 900px;
-    margin: 20px auto;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
-/* Heading */
-#about h2 {
-    font-size: 30px;
-    margin-bottom: 15px;
-    color: #2c3e50;
-    font-weight: 700;
-}
-
-/* Paragraph styling */
+/* Improve paragraph readability */
 #about p {
     font-size: 16px;
-    line-height: 1.7;
-    color: #555;
-    margin-bottom: 14px;
+    line-height: 1.8;
+    color: #4a5a6a;
+    margin-bottom: 16px;
 }
 
-/* Highlight important line */
-#about p strong {
+/* Add subtle spacing between paragraphs */
+#about p:not(:last-child) {
+    border-left: 3px solid #ff7a3d;
+    padding-left: 12px;
+}
+
+#about h2 {
+   font-family: Georgia, 'Times New Roman', serif;
+}
+
+#updates {
+    background: #f5f7fa;
+    padding: 25px;
+    border-radius: 12px;
+    margin: 20px auto;
+    max-width: 900px;
+    border-left: 5px solid #ff7a3d;
+}
+
+#updates h2 {
+    margin-bottom: 15px;
+    font-family: Georgia, 'Times New Roman', serif;
+}
+
+.updates-list {
+    padding-left: 20px;
+}
+
+.updates-list li {
+    list-style-type: disc;   /* default dot */
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #444;
+    line-height: 1.6;
+}
+
+#about .team {
+    margin-top: 15px;
+    font-size: 16px;
     color: #2c3e50;
 }
 
-/* Team section */
-#about .team {
-    margin-top: 15px;
+/* Style only the "The Team:" part */
+#about .team strong {
+    color: #ff7a3d;
     font-weight: 600;
-    color: #333;
+    font-family: Georgia, 'Times New Roman', serif;
 }
 
-/* Optional: subtle left border for style */
-#about {
-    border-left: 5px solid #ff7a3d;
+/* Names styling */
+#about .team span {
+    color: #555;
+    font-weight: 500;
 }
