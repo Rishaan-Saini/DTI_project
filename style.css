@@ -443,7 +443,7 @@ body.dark-mode .home-hero h1 {
     color: #444;
 }
 
-/* Improve paragraph readability */
+
 #about p {
     font-size: 16px;
     line-height: 1.8;
@@ -451,7 +451,7 @@ body.dark-mode .home-hero h1 {
     margin-bottom: 16px;
 }
 
-/* Add subtle spacing between paragraphs */
+
 #about p:not(:last-child) {
     border-left: 3px solid #ff7a3d;
     padding-left: 12px;
@@ -480,7 +480,7 @@ body.dark-mode .home-hero h1 {
 }
 
 .updates-list li {
-    list-style-type: disc;   /* default dot */
+    list-style-type: disc; 
     margin-bottom: 10px;
     font-size: 16px;
     line-height: 1.6;
@@ -492,22 +492,20 @@ body.dark-mode .home-hero h1 {
     color: #2c3e50;
 }
 
-/* Style only the "The Team:" part */
+
 #about .team strong {
     color: #ff7a3d;
     font-weight: 600;
     font-family: Georgia, 'Times New Roman', serif;
 }
 
-/* Names styling */
+
 #about .team span {
     color: #555;
     font-weight: 500;
 }
 
-/* ======================
-   BASE STYLING
-====================== */
+
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
@@ -515,9 +513,8 @@ body {
     color: #1e293b;
 }
 
-/* ======================
-   HEADER / NAVBAR
-====================== */
+
+
 header {
     display: flex;
     justify-content: space-between;
@@ -551,9 +548,7 @@ nav .danger {
     color: #ff4d6d;
 }
 
-/* ======================
-   SECTIONS
-====================== */
+
 .section {
     display: none;
     padding: 30px;
@@ -563,9 +558,7 @@ nav .danger {
     display: block;
 }
 
-/* ======================
-   HERO SECTION
-====================== */
+
 .home-hero {
     background: #0f172a;
     padding: 50px;
@@ -584,9 +577,7 @@ nav .danger {
     margin-top: 10px;
 }
 
-/* ======================
-   HERO BUTTONS
-====================== */
+
 .hero-buttons {
     margin-top: 20px;
 }
@@ -605,9 +596,7 @@ nav .danger {
     background: #e63b5c;
 }
 
-/* ======================
-   GRID LAYOUT
-====================== */
+
 .grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -615,9 +604,7 @@ nav .danger {
     margin-top: 20px;
 }
 
-/* ======================
-   FEATURE CARDS (HOME ONLY)
-====================== */
+
 #home .feature-card {
     background: #0f172a;
     padding: 20px;
@@ -638,16 +625,12 @@ nav .danger {
     color: #cbd5f5;
 }
 
-/* ======================
-   AVAILABLE ITEMS GRID
-====================== */
+
 #available .grid {
     grid-template-columns: repeat(3, 1fr);
 }
 
-/* ======================
-   FORM
-====================== */
+
 .form-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -669,9 +652,7 @@ textarea {
     resize: none;
 }
 
-/* ======================
-   FAQ
-====================== */
+
 .faq-title {
     font-size: 28px;
     margin-bottom: 20px;
@@ -696,9 +677,7 @@ textarea {
     padding: 10px;
 }
 
-/* ======================
-   ABOUT SECTION
-====================== */
+
 .makers-info {
     background: #f1f5f9;
     padding: 25px;
@@ -713,7 +692,7 @@ textarea {
     margin-bottom: 8px;
 }
 
-/* TEAM */
+
 .team-box {
     margin-top: 20px;
     font-weight: 600;
