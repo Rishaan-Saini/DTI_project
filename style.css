@@ -184,7 +184,7 @@ button.btn-submit {
     align-items: center; /* Keeps text and button vertically aligned */
 }
 
-.sold-list:hover{
+.sold-list li:hover{
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
@@ -196,6 +196,11 @@ button.btn-submit {
     border-radius: 4px;
     cursor: pointer;
 }
+
+.btn-delete-small:hover{
+    opacity: 0.9;
+}
+
 
 .sold-name { font-weight: bold; }
 .sold-price { color: #666; }
