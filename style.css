@@ -486,9 +486,6 @@ body.dark-mode .home-hero h1 {
     color: #444;
     line-height: 1.6;
 }
-.updates-list li::marker {
-    color: #ff7a3d;
-}
 
 #about .team {
     margin-top: 15px;
