@@ -1,7 +1,5 @@
-// Data Structure holding our items
 let marketItems = [];
 
-// Initialize App
 window.onload = function() {
     loadFromStorage();
     renderAvailable();
@@ -13,30 +11,29 @@ window.onload = function() {
     }
 };
 
-// Navigation Logic
+// THIS FUNCTION HANDLES THE SWITCHING BETWEEN DIFFERENT SECTION ON MAIN PAGE
 function showSection(sectionId) {
-    // Hide all sections
+    // SHOWS ONLY THE SELECTED SECTION AND HIDES THE REST
     document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
-    // Remove active class from buttons
+    
+    //THIS RESETS ALL NAV BUTTON SO NONE LOOKS SELETCED
     document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
     
-    // Show target section
+    // THIS DISPLAYS THE SECTION WE HAVE CLICKED ON
     document.getElementById(sectionId).classList.add('active');
-    
-    // Highlight active button (ignore master clear)
+
+    // HIGHLIGHTS THE SECTION THAT IS SELECTED
     const targetBtn = document.getElementById(`btn-${sectionId}`);
     if(targetBtn) targetBtn.classList.add('active');
 }
 
-// Toggle Dark Mode
+// THIS IS TO TOGGLE DARK THEME
 function toggleTheme() {
     const body = document.body;
     const themeBtn = document.getElementById('btn-theme');
     
-    // This adds the class if it's missing, or removes it if it's there
     body.classList.toggle('dark-mode');
     
-    // Check if the class is currently active to save the preference
     if (body.classList.contains('dark-mode')) {
         localStorage.setItem('marketTheme', 'dark');
         themeBtn.innerText = '☀️ Light Mode';
@@ -46,7 +43,7 @@ function toggleTheme() {
     }
 }
 
-// Add New Item Logic
+//THIS ADDS A NEW ITEM
 async function handleAddItem(e) {
     e.preventDefault();
 
@@ -56,7 +53,7 @@ async function handleAddItem(e) {
     const fileInput = document.getElementById('itemImage');
     const file = fileInput.files[0];
 
-    // Size validation (1MB = 1048576 bytes)
+    // THIS IS FOR SIZE VALIDATION
     if (file.size > 1048576) {
         alert("File is too large! Please select an image under 1MB.");
         return;
@@ -83,8 +80,6 @@ async function handleAddItem(e) {
 
         marketItems.push(newItem);
         saveToStorage();
-        
-        // Reset form and UI
         document.getElementById('addItemForm').reset();
         renderAvailable();
         showSection('available');
@@ -95,7 +90,7 @@ async function handleAddItem(e) {
     }
 }
 
-// Convert Image to Base64 String
+// THIS IS TO CONVERT IMAGE TO BASE 64 STRING
 function convertBase64(file) {
     return new Promise((resolve, reject) => {
         const reader = new FileReader();
@@ -105,7 +100,7 @@ function convertBase64(file) {
     });
 }
 
-// Mark an item as sold
+// THIS IS TO MARK AN ITEM AS SOLD
 function markAsSold(id) {
     if(confirm("Are you sure you want to mark this item as sold?")) {
         const itemIndex = marketItems.findIndex(item => item.id === id);
@@ -118,7 +113,7 @@ function markAsSold(id) {
     }
 }
 
-// Render the Grid of Available Items
+// SHOWS US THE GIRD OF ITEMS THAT ARE IN SHOP
 function renderAvailable() {
     const grid = document.getElementById('available-grid');
     grid.innerHTML = '';
@@ -155,11 +150,12 @@ function renderAvailable() {
     <p><b>Contact:</b> ${item.contact}</p>
 </div>
 `;
+        //THIS IS DONE TO SHOW ALL ITEM DETAILS ON THE GRID
         grid.appendChild(card);
     });
 }
 
-// Render the List of Sold Items
+// IT RENDERS US THE LIST OF SOLD ITEMS
 function renderSold() {
     const list = document.getElementById('sold-list');
     list.innerHTML = '';
@@ -184,26 +180,24 @@ function renderSold() {
     });
 }
 
-// Permanently Delete an Item
+// PERMANENT DELETING
 function deleteItem(id) {
     if(confirm("Are you sure you want to permanently delete this item? This will free up storage space.")) {
-        // Filter out the item with the matching ID
+        
         marketItems = marketItems.filter(item => item.id !== id);
         
-        // Save the new, smaller list to storage
-        saveToStorage();
-        
-        // Re-render the screens to show the item is gone
-        // Note: If you haven't implemented the search bar yet, just use renderAvailable();
+        // THIS SAVES A NEW ITEM TO LOCAL STORAGE
+        saveToStorage();   
         const searchInput = document.getElementById('searchInput');
         const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
         
         renderAvailable(searchTerm);
         renderSold();
+        //THIS RE-RENDERS TO SHOW US THAT THE ITEM IS GONE
     }
 }
 
-// Local Storage Helpers
+// LOCAL STORAGE
 function saveToStorage() {
     try {
         localStorage.setItem('localMarketItems', JSON.stringify(marketItems));
@@ -219,7 +213,7 @@ function loadFromStorage() {
     }
 }
 
-// Master Clear
+// MASTER CLEAR
 function clearMaster() {
     if(confirm("WARNING: This will delete ALL available and sold items forever. Are you sure?")) {
         localStorage.removeItem('localMarketItems');
