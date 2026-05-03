@@ -388,3 +388,57 @@ body.dark-mode .home-hero h1 {
   border-radius: 5px;
   font-size: 14px;
 }
+
+.faq-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.faq-category {
+    color: #ff7a3d;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.faq-container {
+    width: 100%;
+}
+
+.faq-item {
+    border-radius: 10px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    text-align: left;
+    padding: 18px;
+    font-size: 18px;
+    font-weight: 600;
+    background: #f2f2f2;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.faq-question:hover {
+    background: #e6e6e6;
+}
+
+.faq-answer {
+    display: none;
+    padding: 15px 18px;
+    background: #fafafa;
+    border-top: 1px solid #ddd;
+}
+
+.faq-answer p {
+    margin: 0;
+    font-size: 15px;
+    color: #444;
+}
