@@ -443,45 +443,66 @@ body.dark-mode .home-hero h1 {
     color: #444;
 }
 
-/* Container styling */
-#about {
-    background: #f5f7fa;
-    padding: 30px;
-    border-radius: 12px;
-    max-width: 900px;
-    margin: 20px auto;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
-/* Heading */
-#about h2 {
-    font-size: 30px;
-    margin-bottom: 15px;
-    color: #2c3e50;
-    font-weight: 700;
-}
-
-/* Paragraph styling */
+/* Improve paragraph readability */
 #about p {
     font-size: 16px;
+    line-height: 1.8;
+    color: #4a5a6a;
+    margin-bottom: 16px;
+}
+
+/* Add subtle spacing between paragraphs */
+#about p:not(:last-child) {
+    border-left: 3px solid #ff7a3d;
+    padding-left: 12px;
+}
+
+/* Team section styling */
+#about .team {
+    margin-top: 20px;
+    padding: 12px 16px;
+    background: #fff;
+    border-radius: 8px;
+    border-left: 5px solid #ff7a3d;
+    font-weight: 600;
+    color: #2c3e50;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+/* Make team names slightly softer */
+#about .team span {
+    font-weight: 500;
+    color: #555;
+}
+
+/* Optional: slight hover effect */
+#about .team:hover {
+    transform: translateY(-2px);
+    transition: 0.2s;
+}
+
+#updates {
+    background: #f5f7fa;
+    padding: 25px;
+    border-radius: 12px;
+    margin: 20px auto;
+    max-width: 900px;
+    border-left: 5px solid #ff7a3d;
+}
+
+#updates h2 {
+    margin-bottom: 10px;
+}
+
+#updates p {
     line-height: 1.7;
     color: #555;
-    margin-bottom: 14px;
 }
 
-/* Highlight important line */
-#about p strong {
-    color: #2c3e50;
-}
-
-/* Team section */
-#about .team {
-    margin-top: 15px;
-    font-weight: 600;
-    color: #333;
-}
-
-/* Optional: subtle left border for style */
-#about {
-    border-left: 5px solid #ff7a3d;
+.team-box {
+    margin-top: 20px;
+    padding: 15px;
+    background: #fff;
+    border-radius: 10px;
+    border-left: 4px solid #ff7a3d;
 }
